@@ -7,6 +7,11 @@ public class EmployeeRepository {
 
     public String getEmployee(Integer id){
         //DB operation
-        return "emp";
+        System.out.println("Entered Repo");
+        String employee;
+        if (id == 1) employee = "Pinki";
+        else employee = "Srijan";
+        System.out.println("Exiting Repo");
+        return employee;
     }
 }
