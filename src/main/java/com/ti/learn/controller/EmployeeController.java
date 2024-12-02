@@ -1,6 +1,7 @@
 package com.ti.learn.controller;
 
 
+import com.ti.learn.dto.EmployeeDTO;
 import com.ti.learn.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +16,8 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @GetMapping("/getEmployee/{id}")
-    public ResponseEntity<String> getEmployee(@PathVariable Integer id){
-
-        System.out.println("Entered Controller");
-        String employee = employeeService.getEmployee(id);
-        System.out.println("Exiting Controller");
+    public ResponseEntity<EmployeeDTO> getEmployee(@PathVariable Integer id){
+        EmployeeDTO employee = employeeService.getEmployee(id);
         return ResponseEntity.ok(employee);
     }
 }

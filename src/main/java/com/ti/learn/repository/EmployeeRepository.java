@@ -1,17 +1,13 @@
 package com.ti.learn.repository;
 
+import com.ti.learn.entity.EmployeeEntity;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class EmployeeRepository {
 
-    public String getEmployee(Integer id){
+    public EmployeeEntity getEmployee(Integer id){
         //DB operation
-        System.out.println("Entered Repo");
-        String employee;
-        if (id == 1) employee = "Pinki";
-        else employee = "Srijan";
-        System.out.println("Exiting Repo");
-        return employee;
+        return new EmployeeEntity(23,"HR","Anil",507357);
     }
 }
